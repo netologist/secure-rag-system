@@ -45,7 +45,7 @@ graph LR
 
 ### Prerequisites
 
-- Python 3.8+
+- Python 3.13+
 - OpenAI API key (or compatible API)
 - 2GB+ RAM for embedding models
 
