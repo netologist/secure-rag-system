@@ -56,8 +56,14 @@ graph LR
 git clone https://github.com/netologist/secure-rag-system.git
 cd secure-rag-system
 
-# Install dependencies
-pip install -r requirements.txt
+# Install development dependencies
+uv install
+
+# Activate Virtual Env
+source .venv/bin/activate
+
+# Run
+python -m main
 
 # Or install manually
 pip install pydantic-ai chromadb openai sentence-transformers scikit-learn
@@ -315,30 +321,6 @@ for batch in chunks(documents, 5):
 - Use appropriate distance metrics
 - Consider index optimization for large datasets
 
-## 📚 Examples
-
-### Enterprise Document Processing
-
-See `examples/enterprise_setup.py` for a complete enterprise implementation including:
-- PDF processing
-- Access controls
-- Audit logging
-- Multi-tenant support
-
-### Integration Examples
-
-- **Slack Bot**: `examples/slack_integration.py`
-- **Web API**: `examples/fastapi_server.py`
-- **CLI Tool**: `examples/cli_interface.py`
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
 ### Development Setup
 
 ```bash
@@ -347,18 +329,14 @@ git clone https://github.com/netologist/secure-rag-system.git
 cd secure-rag-system
 
 # Install development dependencies
-pip install -e ".[dev]"
+uv install
 
-# Run tests
-pytest tests/
+# Activate Virtual Env
+source .venv/bin/activate
 
-# Run linting
-black . && isort . && flake8
+# Run
+python -m main
 ```
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## 🔗 Related Projects
 
@@ -376,6 +354,3 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - [ ] Federated learning capabilities
 - [ ] Real-time document updates
 
----
-
-**⚠️ Security Notice**: This system is designed for sensitive enterprise data. Always review and test security configurations before production deployment.
